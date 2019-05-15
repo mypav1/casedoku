@@ -1,0 +1,51 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color:rgb(226, 24, 24);
+}
+
+
+.error {
+  color: blue;
+  font-family: "Comic Sans MS";
+  text-decoration: underline;
+}
+
+#lucky_number {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+/* User table */
+.user_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user_table th {
+  padding: 7px;
+  border: #4E50f9 1px solid;
+  background: orange;
+  color: green;
+}
+
+/* Fallback for IE < 8 */
+.user_table tr {
+  background: #B8b1f3;
+}
+
+.user_table tr:nth-child(odd) {
+  background: #B8b1f3;
+}
+
+.user_table tr:nth-child(even) {
+  background: #e0f1e0;
+}
