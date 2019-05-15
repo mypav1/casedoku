@@ -68,10 +68,10 @@ a {
   background: #B8b1f3;
 }
 
-.car_table tr:ntd-child(odd) {
+.car_table tr:nth-child(odd) {
   background: yellow;
 }
 
-.car_table tr:ntd-child(even) {
+.car_table tr:nth-child(even) {
   background: pink;
 }
