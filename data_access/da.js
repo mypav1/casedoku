@@ -1,4 +1,5 @@
 const Person = require('../models/person');
+const Cars = require('../models/cars');
 const mongoose = require('mongoose');
 
 
@@ -19,6 +20,23 @@ function savePerson(p) {
     p1.save();
 }
 
+function saveCars(c) {
+    connect2db();
+    var c1 = new Cars(c);
+    c1.save();
+}
+
+function getAllCars(cc) {
+    connect2db();
+    
+    Cars.find(function(err, cars) {
+        if(err) {
+        console.log('Error getting cars' + err);
+    }
+    cc(err,cars);    
+    });
+}
+
 
 function getAllPersons(cb) {
     connect2db();
@@ -32,5 +50,7 @@ function getAllPersons(cb) {
 
 module.exports = {
     savePersonFromJson: savePerson,
-    findPersons: getAllPersons
+    findPersons: getAllPersons,
+    saveCarFromJson: saveCars,
+    findCars: getAllCars
 };

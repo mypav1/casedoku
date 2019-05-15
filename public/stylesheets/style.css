@@ -50,3 +50,28 @@ a {
 .user_table tr:nth-child(even) {
   background: #e0f1e0;
 }
+
+/* Car table */
+.car_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.car_table th {
+  padding: 7px;
+  border: goldenrod 1px solid;
+  background: whitesmoke;
+  color: red;
+}
+
+.car_table tr{
+  background: #B8b1f3;
+}
+
+.car_table tr:ntd-child(odd) {
+  background: yellow;
+}
+
+.car_table tr:ntd-child(even) {
+  background: pink;
+}

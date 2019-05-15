@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1 List of all cars
+    table.car_table
+        tr
+            th Car Type
+            th Car Model
+            th Horsepower
+            th Fuel
+            th Transmition
+        if car_list && car_list.length > 0
+            each car in car_list
+                tr
+                    td #{car.car_type}
+                    td #{car.car_model}
+                    td #{car.horsepower}
+                    td #{car.fuel}
+                    td #{car.transmition}
+        else
+            tr
+                td(colspan=5) No records
