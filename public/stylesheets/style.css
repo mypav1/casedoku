@@ -38,6 +38,15 @@ a {
   color: green;
 }
 
+.user_table td.center {
+  text-align: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
 /* Fallback for IE < 8 */
 .user_table tr {
   background: #B8b1f3;
@@ -75,6 +84,9 @@ a {
 .car_table tr:nth-child(even) {
   background: pink;
 }
+
+
+
 
 /* Input Form*/
 .user_input{

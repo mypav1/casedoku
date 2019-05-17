@@ -14,12 +14,17 @@ function connect2db() {
     });
 }
 
-function savePerson(p) {
+function savePerson(p, cb) {
     connect2db();
     var p1 = new Person(p);
     bcrypt.hash(p1.password, 10, function(err, hash) {
         p1.password = hash;
-        p1.save();
+        p1.save(function(err){
+            if(err) {
+                console.log("Error creating user" + err)
+            }
+            cb(err);
+        });
     });
     
 }
@@ -52,9 +57,33 @@ function getAllPersons(cb) {
     });
 }
 
+function search(pattern, cb) {
+    connect2db();
+    Person.find({$or: [
+                        {first_name: {$regex: '.*' + pattern + '.*'}},
+                        {last_name:{$regex: '.*' + pattern + '.*'}}
+                      ]
+    }, function(err, users){
+        cb(err, users);
+    });
+}
+
+
+function deleteUser(id, cb) {
+    connect2db();
+    Person.deleteOne({"_id": id}, function (err, res){
+        if (err) {
+            console.log("Error deleting user" + err);
+        }
+        cb(err);
+    });
+}
+
 module.exports = {
     savePersonFromForm: savePerson,
     findPersons: getAllPersons,
     saveCarFromJson: saveCars,
-    findCars: getAllCars
+    findCars: getAllCars,
+    search: search,
+    deleteUser: deleteUser,
 };
