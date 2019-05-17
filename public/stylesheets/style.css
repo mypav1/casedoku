@@ -82,7 +82,7 @@ a {
 }
 
 .car_table tr:nth-child(even) {
-  background: pink;
+  background: rgb(40, 180, 5);
 }
 
 
