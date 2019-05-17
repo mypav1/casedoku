@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h1 List of all parts
+    table.car_table
+        tr
+            th Product Name
+            th Product Description
+            th Manufacturer Name
+            th Manufacturer Contact
+            th Manufacturer Nr
+            th HQ Address
+            th HQ City
+        if part_list && part_list.length > 0
+            each part in part_list
+                tr
+                    td #{part.prodName}
+                    td #{part.prodDesc}
+                    td #{part.manuName}
+                    td #{part.manuContactPerson}
+                    td #{part.manuContactNr}
+                    td #{part.hqAddress}
+                    td #{part.hqCity}
+        else
+            tr
+                td(colspan=7) No records

@@ -1,5 +1,6 @@
 const Person = require('../models/person');
 const Cars = require('../models/cars');
+const Parts = require('../models/parts');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
@@ -28,6 +29,23 @@ function savePerson(p, cb) {
     });
     
 }
+
+function saveParts(pa1) {
+    connect2db();
+    var pa1 = new Cars(pa1);
+    pa1.save();
+}
+
+function getAllParts(cb) {
+    connect2db();
+    Parts.find(function(err, cars) {
+        if(err) {
+        console.log('Error getting parts' + err);
+    }
+    cb(err,cars);    
+    });
+}
+
 
 function saveCars(c) {
     connect2db();
@@ -86,4 +104,6 @@ module.exports = {
     findCars: getAllCars,
     search: search,
     deleteUser: deleteUser,
+    savePartsFromForm: saveParts,
+    findParts: getAllParts,
 };
