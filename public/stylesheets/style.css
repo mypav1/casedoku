@@ -47,6 +47,12 @@ a {
   height: 24px;
 }
 
+.avatar-icon {
+  width: 20%;
+  height: 20%;
+}
+
+
 /* Fallback for IE < 8 */
 .user_table tr {
   background: #B8b1f3;

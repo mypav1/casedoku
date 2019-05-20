@@ -97,6 +97,20 @@ function deleteUser(id, cb) {
     });
 }
 
+function getPersonByUsername(username, cb) {
+    connect2db();
+    Person.findOne({'username': username}, function(err, user){
+        cb(err, user);
+    });
+}
+
+function getPersonById(userid, cb) {
+    connect2db();
+    Person.findOne({'_id': userid}, function(err, user){
+        cb(err, user);
+    });
+}
+
 
 module.exports = {
     savePersonFromForm: savePerson,
@@ -107,4 +121,6 @@ module.exports = {
     deleteUser: deleteUser,
     savePartsFromForm: saveParts,
     findParts: getAllParts,
+    getUserByUsername: getPersonByUsername,
+    getUserById: getPersonById,
 };
