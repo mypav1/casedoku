@@ -32,7 +32,7 @@ function savePerson(p, cb) {
 
 function saveParts(pa1) {
     connect2db();
-    var pa1 = new Cars(pa1);
+    var pa1 = new Parts(pa1);
     pa1.save();
 }
 

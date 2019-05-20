@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  h1 Add Parts
+
+  form.user_input(action='/parts', method='post')
+    label(for='prodName')
+        span Product Name
+        input(type='text', name='prodName', id='prodName', required='true')
+    label(for='prodDesc')
+        span Product Description
+        input(type='text', name='prodDesc', id='prodDesc', required='true')
+    label(for='manuName')
+        span Manufacturer Name
+        input(type='text', name='manuName', id='manuName', required='true')
+    label(for='manuContactPerson')
+        span Contact Person
+        input(type='text', name='manuContactPerson', id='manuContactPerson', required='true')
+    label(for='manuContactNr')
+        span Contact Phone Nr
+        input(type='text', name='manuContactNr', id='manuContactNr', required='true')
+    label(for='hqAddress')
+        span HQ Address
+        input(type='text', name='hqAddress', id='hqAddress', required='true')
+    label(for='hqCity')
+        span HQ City
+        input(type='text', name='hqCity', id='hqCity', required='true')
+    label.control-lable(for='submit')
+        span
+        input(type='submit', id='submit', value='Save')

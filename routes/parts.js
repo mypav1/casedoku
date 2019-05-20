@@ -16,4 +16,8 @@ router.post('/', function(req, res, next) {
   res.send("Part saved");
 });
 
+router.get('/add', function(req, res){
+  res.render('parts/add', {title: 'Add Parts'});
+});
+
 module.exports = router;
