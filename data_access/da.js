@@ -1,6 +1,7 @@
 const Person = require('../models/person');
 const Cars = require('../models/cars');
 const Parts = require('../models/parts');
+const Orders = require('../models/orders');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
@@ -46,6 +47,7 @@ function getAllParts(cb) {
     });
 }
 
+// Cars
 
 function saveCars(c) {
     connect2db();
@@ -123,20 +125,42 @@ function addFriend(userid1, userid2, cb) {
 function getFriendsOfUser(user, cb) {
     connect2db();
     var friends_ids = user.friends;
+    if(friends_ids.length === 0) {
+        cb([]);
+    }
     var friends = [];
     var count = 0;
-
     friends_ids.forEach(function(id){
         Person.findOne({'_id': id}, function(err, friend){
             friends.push(friend);
             count++;
-            if (count === friends_ids.length){
+            if(count === friends_ids.length){
                 cb(friends);
             }
         });
     });
-    cb(friends);
+    //cb(friends);
 }
+
+
+// Orders
+
+function saveOrders(o) {
+    connect2db();
+    var o1 = new Orders(o);
+    o1.save();
+}
+
+function getAllOrders(cb) {
+    connect2db();
+    Orders.find(function(err, orders) {
+        if(err) {
+        console.log('Error getting orders' + err);
+    }
+        cb(err,orders);    
+    });
+}
+
 
 
 module.exports = {
@@ -152,4 +176,8 @@ module.exports = {
     getUserById: getPersonById,
     addFriend: addFriend,
     getFriendsOfUser: getFriendsOfUser,
+    saveOrdersFromForm: saveOrders,
+    findOrders: getAllOrders,
+
+
 };

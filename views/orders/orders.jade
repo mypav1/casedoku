@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+    h1 List of all orders
+    table.car_table
+        tr
+            th Order Date
+            th Reg Nr
+            th Customer Car
+            th Parts
+            th Shop Name
+            th Contact Person
+            th Price
+            th test
+        if order_list && order_list.length > 0
+            each order in order_list
+                tr
+                    td #{order.order_date}
+                    td #{order.reg_nr}
+                    td #{order.customer_car}
+                    td #{order.parts}
+                    td #{order.shop}
+                    td #{order.contact_person}
+                    td #{order.price}
+                    td 
+                        select
+                            option(selected disabled) Välj för fan
+                            each o in order_list
+                                option(value=o.reg_nr) #{o.reg_nr}
+        else
+            tr
+                td(colspan=7) No records

@@ -16,15 +16,25 @@ html
         
       .row
         .col-xs-4
-          .menu-box
-            a.menu(href='/') Home
-            a.menu(href='/users') List Users
-            a.menu(href='/users/add') Add New User
-            a.menu(href='/parts') View Parts
-            a.menu(href='/parts/add') Add Sparepart
-            if userid
-              a.menu(href='/dashboard') Dashboard
-              a.menu(href='/logout') Logout
-            else
-              a.menu(href='/login') Login
+          
+          .container
+            .row
+              .menu-box
+                .col-xs-4
+                  a.menu(href='/') Home
+                  a.menu(href='/users') List Users
+                  a.menu(href='/users/add') Add New User
+                  a.menu(href='/parts') View Parts
+                  a.menu(href='/parts/add') Add Sparepart
+            .row
+              .menu-box
+                .col-xs-4
+                  a.menu(href='/cars') View All Cars
+                  a.menu(href='/cars/add') Add Car
+            
+                  if userid
+                    a.menu(href='/dashboard') Dashboard
+                    a.menu(href='/logout') Logout
+                  else
+                    a.menu(href='/login') Login
     block content

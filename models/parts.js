@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-// Create Person Schema
+// Create Part Schema
 const PartsSchema = new Schema({
     prodName: String,
     prodDesc: String,

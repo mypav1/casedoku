@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  h1 Add Car
+
+  form.user_input(action='/cars', method='post')
+    label(for='car_type')
+        span Brand
+        input(type='text', name='car_type', id='car_type', required='true')
+    label(for='car_model')
+        span Model
+        input(type='text', name='car_model', id='car_model', required='true')
+    label(for='horsepower')
+        span Horsepower
+        input(type='text', name='horsepower', id='horsepower', required='true')
+    label(for='fuel')
+        span Fuel Type
+        br
+        select
+            option(value="Bensin") Bensin
+            option(value="Diesel") Diesel
+    label(for='transmition')
+        span Transmition
+        input(type='text', name='transmition', id='transmition', required='true')
+    label.control-lable(for='submit')
+        span
+        input(type='submit', id='submit', value='Save')
