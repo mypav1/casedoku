@@ -22,11 +22,6 @@ block content
                     td #{order.shop}
                     td #{order.contact_person}
                     td #{order.price}
-                    td 
-                        select
-                            option(selected disabled) Välj för fan
-                            each o in order_list
-                                option(value=o.reg_nr) #{o.reg_nr}
         else
             tr
                 td(colspan=7) No records

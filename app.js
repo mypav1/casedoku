@@ -21,7 +21,7 @@ const ordersRouter = require('./routes/orders');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/social_network', {
+mongoose.connect('mongodb://localhost/spareparts', {
   useNewUrlParser: true
 });
 

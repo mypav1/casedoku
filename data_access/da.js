@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 function connect2db() {
-    mongoose.connect('mongodb://localhost:27017/social_network',
+    mongoose.connect('mongodb://localhost:27017/spareparts',
         { useNewUrlParser: true });
 
     mongoose.connection.once('open', function () {

@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   da.savePartsFromForm(req.body);
-  res.send("Part saved");
+  res.redirect("/parts");
 });
 
 router.get('/add', function(req, res){

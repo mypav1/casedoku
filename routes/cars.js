@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   da.saveCarFromJson(req.body);
-  res.send("Car saved");
+    res.redirect('/cars');
 });
 
 router.get('/add', function(req, res){

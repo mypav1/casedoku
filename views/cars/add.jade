@@ -16,12 +16,18 @@ block content
     label(for='fuel')
         span Fuel Type
         br
-        select
-            option(value="Bensin") Bensin
-            option(value="Diesel") Diesel
+        select.dropdown_window(type='text', name='fuel', id='fuel', required='true')
+            option Petrol
+            option Diesel
+            option Jet Fuel
+            option Grass
+            option Gas
     label(for='transmition')
         span Transmition
-        input(type='text', name='transmition', id='transmition', required='true')
+        br
+        select.dropdownn_window(type='text', name='transmition', id='transmition', required='true')
+            option Automat
+            option Manual
     label.control-lable(for='submit')
         span
         input(type='submit', id='submit', value='Save')
