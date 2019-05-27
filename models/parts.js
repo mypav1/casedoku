@@ -6,13 +6,15 @@ const Schema = mongoose.Schema;
 const PartsSchema = new Schema({
     prodName: String,
     prodDesc: String,
+    price: String,
     manufacturer: {
         manuName: String,
         manuContactPerson: String,
         manuContactNr: String,
         hqAddress: String,
         hqCity: String,
-    }
+    },
+    instock: String,
 }, { collection: 'parts' });
 
 // Create model

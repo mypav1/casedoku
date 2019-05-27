@@ -6,22 +6,31 @@ block content
         tr
             th Order Date
             th Reg Nr
-            th Customer Car
+            th First Name
+            th Last Name
+            th Phone Nr
+            th Address
+            th Zip Code
             th Parts
-            th Shop Name
             th Contact Person
+            th Shop Nr
+            th Contact Address
             th Price
-            th test
         if order_list && order_list.length > 0
             each order in order_list
                 tr
                     td #{order.order_date}
                     td #{order.reg_nr}
-                    td #{order.customer_car}
+                    td #{order.customer.first_name}
+                    td #{order.customer.last_name}
+                    td #{order.customer.phoneNr}
+                    td #{order.customer.address}
+                    td #{order.customer.zip_code}
                     td #{order.parts}
-                    td #{order.shop}
-                    td #{order.contact_person}
+                    td #{order.shop.contact_person}
+                    td #{order.shop.contact_number}
+                    td #{order.shop.contact_address}
                     td #{order.price}
         else
             tr
-                td(colspan=7) No records
+                td(colspan=12) No records

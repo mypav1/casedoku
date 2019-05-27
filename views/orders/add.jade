@@ -10,21 +10,42 @@ block content
     label(for='reg_nr')
         span Registration Number
         input(type='text', name='reg_nr', id='reg_nr', required='true')
-    label(for='customer_car')
-        span Customer Car
-        input(type='text', name='customer_car', id='customer_car', required='true')
+    label(for='customer.first_name')
+        span First Name 
+        input(type='text', name='customer.first_name', id='customer.first_name', required='true')
+    label(for='customer.last_name')
+        span Last Name
+        input(type='text', name='customer.last_name', id='customer.last_name', required='true')
+    label(for='customer.phoneNr')
+        span Phone Nr
+        input(type='text', name='customer.phoneNr', id='customer.phoneNr', required='true')
+    label(for='customer.address')
+        span Address
+        input(type='text', name='customer.address', id='customer.address', required='true')
+    label(for='customer.zip_code')
+        span Zip Code
+        input(type='text', name='customer.zip_code', id='customer.zip_code', required='true')
     label(for='parts')
         span Parts
-        input(type='text', name='parts', id='parts', required='true')
-    label(for='shop')
-        span Shop
-        input(type='text', name='shop', id='shop', required='true')
-    label(for='contact_person')
-        span Contact Person
-        input(type='text', name='contact_person', id='contact_person', required='true')
-    label(for='hqCity')
+        br
+        select(type='text', name='parts', id='parts' required='true')
+            
+
+    label(for='shop.contact_person')
+        span Employee
+        input(type='text', name='shop.contact_person', id='shop.contact_person', required='true')
+    label(for='shop.contact_number')
+        span Employee Contact Number
+        input(type='text', name='shop.contact_number', id='shop.contact_number', required='true')
+    label(for='shop.contact_address')
+        span Contact Address
+        input(type='text', name='shop.contact_address', id='shop.contact_address', required='true')
+    label(for='shop.contact_city')
+        span Contact City
+        input(type='text', name='shop.contact_city', id='shop.contact_city', required='true')
+    label(for='price')
         span Price
-        input(type='text', name='price', id='price', required='true')
+        input(type='text', name='price', id='price', required='true')   
     label.control-lable(for='submit')
         span
         input(type='submit', id='submit', value='Save')

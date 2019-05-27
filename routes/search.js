@@ -11,4 +11,12 @@ router.post('/', function(req, res){
     });
 });
 
+router.post('/parts', function(req, res){
+    da.searchPart(req.body['search'], function(err, parts){
+        var userid = req.session['userid'];
+        res.render('parts/parts', {title:'Part listing', part_list: parts, userid: userid});
+    });
+});
+
+
 module.exports = router;

@@ -39,13 +39,33 @@ function saveParts(pa1) {
 
 function getAllParts(cb) {
     connect2db();
-    Parts.find(function(err, cars) {
+    Parts.find(function(err, parts) {
         if(err) {
         console.log('Error getting parts' + err);
     }
-    cb(err,cars);    
+    cb(err,parts);    
     });
 }
+
+
+function searchPart(pattern, cb) {
+    connect2db();
+    Parts.find({$or: [
+                        {prodName: {$regex: '.*' + pattern + '.*'}},
+                        {prodDesc:{$regex: '.*' + pattern + '.*'}}
+                      ]
+    }, function(err, parts){
+        cb(err, parts);
+    });
+}
+
+function getPartById(partid, cb) {
+    connect2db();
+    Parts.findOne({'_id': partid}, function(err, parts){
+        cb(err, parts);
+    });
+}
+
 
 // Cars
 
@@ -178,6 +198,8 @@ module.exports = {
     getFriendsOfUser: getFriendsOfUser,
     saveOrdersFromForm: saveOrders,
     findOrders: getAllOrders,
+    searchPart: searchPart,
+    getPartById: getPartById,
 
 
 };

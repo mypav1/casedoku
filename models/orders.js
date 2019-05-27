@@ -6,10 +6,20 @@ const Schema = mongoose.Schema;
 const OrdersSchema = new Schema({
     order_date: String,
     reg_nr: String,
-    customer_car: String,
+    customer: {
+        first_name: String,
+        last_name: String,
+        phoneNr: String,
+        address: String,
+        zip_code: String,
+    },
     parts: String,
-    shop: String,
-    contact_person: String,
+    shop: {
+        contact_person: String,
+        contact_number: String,
+        contact_address: String,
+        contact_city: String,
+    },
     price: String,
 
 

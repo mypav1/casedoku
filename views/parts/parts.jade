@@ -6,21 +6,25 @@ block content
         tr
             th Product Name
             th Product Description
+            th Price
             th Manufacturer Name
             th Manufacturer Contact
             th Manufacturer Nr
             th HQ Address
             th HQ City
+            th In Stock
         if part_list && part_list.length > 0
             each part in part_list
                 tr
                     td #{part.prodName}
                     td #{part.prodDesc}
+                    td #{part.price}
                     td #{part.manufacturer.manuName}
                     td #{part.manufacturer.manuContactPerson}
                     td #{part.manufacturer.manuContactNr}
                     td #{part.manufacturer.hqAddress}
                     td #{part.manufacturer.hqCity}
+                    td #{part.instock}
         else
             tr
-                td(colspan=7) No records
+                td(colspan=9) No records
