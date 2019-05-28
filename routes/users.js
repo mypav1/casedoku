@@ -25,8 +25,10 @@ router.post('/', function(req, res, next) {
 });
 
 router.get('/add', function(req, res){
-  var userid = req.session['userid'];
-  res.render('users/add', {title: 'Add User', userid: userid});
+  da.findCars(function(err, cars) {
+    var userid = req.session['userid'];
+      res.render('users/add', {title: 'Add User', userid: userid, car_list: cars});
+    });
 });
 
 router.get('/add_friend', function (req, res){
@@ -40,5 +42,7 @@ router.get('/delete', function(req, res){
     res.redirect('/users');
   });
 });
+
+
 
 module.exports = router;

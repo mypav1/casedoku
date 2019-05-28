@@ -17,14 +17,10 @@ router.post('/', function(req, res, next) {
 });
 
 
-router.get('/add', function(req, res){
-    res.render('orders/add', {title: 'Add Orders'});
-  });
-
   
 router.get('/add', function(req, res, next) {
   da.findParts(function(err, parts) {
-    res.render('orders/add', {title:'Parts', part_list: parts});
+    res.render('orders/add', {title:'Add Order', part_list: parts});
   });
 });
 

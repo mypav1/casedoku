@@ -28,9 +28,9 @@ block content
     label(for='parts')
         span Parts
         br
-        select(type='text', name='parts', id='parts' required='true')
-            
-
+        select.dropdown_window(type='text', name='parts', id='parts' required='true')
+            each part in part_list
+                option #{part.prodName} --- #{part.price}kr
     label(for='shop.contact_person')
         span Employee
         input(type='text', name='shop.contact_person', id='shop.contact_person', required='true')
@@ -43,9 +43,6 @@ block content
     label(for='shop.contact_city')
         span Contact City
         input(type='text', name='shop.contact_city', id='shop.contact_city', required='true')
-    label(for='price')
-        span Price
-        input(type='text', name='price', id='price', required='true')   
     label.control-lable(for='submit')
         span
         input(type='submit', id='submit', value='Save')

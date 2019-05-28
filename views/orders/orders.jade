@@ -15,7 +15,6 @@ block content
             th Contact Person
             th Shop Nr
             th Contact Address
-            th Price
         if order_list && order_list.length > 0
             each order in order_list
                 tr
@@ -30,7 +29,6 @@ block content
                     td #{order.shop.contact_person}
                     td #{order.shop.contact_number}
                     td #{order.shop.contact_address}
-                    td #{order.price}
         else
             tr
                 td(colspan=12) No records

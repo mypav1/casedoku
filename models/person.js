@@ -10,7 +10,9 @@ const PersonSchema = new Schema({
     username: String,
     password: String,
     birthyear: Number,
-    avatar: String,
+    userCar: {
+        carbrand: String,
+    },   
     friends: [String]
 }, { collection: 'persons' });
 

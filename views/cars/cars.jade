@@ -6,17 +6,23 @@ block content
         tr
             th Car Type
             th Car Model
+            th Car Color
             th Horsepower
             th Fuel
             th Transmition
+            th Delete
         if car_list && car_list.length > 0
             each car in car_list
                 tr
                     td #{car.car_type}
                     td #{car.car_model}
+                    td #{car.color}
                     td #{car.horsepower}
                     td #{car.fuel}
                     td #{car.transmition}
+                    td.center 
+                        a(href='/cars/delete?id=#{car.id}')
+                            img.icon(src='/images/trashcan.png')
         else
             tr
-                td(colspan=5) No records
+                td(colspan=7) No records

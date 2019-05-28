@@ -59,9 +59,9 @@ function searchPart(pattern, cb) {
     });
 }
 
-function getPartById(partid, cb) {
+function getPartById(part_id, cb) {
     connect2db();
-    Parts.findOne({'_id': partid}, function(err, parts){
+    Parts.findOne({'_id': part_id}, function(err, parts){
         cb(err, parts);
     });
 }
@@ -85,6 +85,18 @@ function getAllCars(cc) {
     cc(err,cars);    
     });
 }
+
+
+function deleteCar(id, cb) {
+    connect2db();
+    Cars.deleteOne({"_id": id}, function(err, res) {
+      if(err) {
+        console.log("Error deleting car" + err);
+      }
+      cb(err);
+    });
+  }
+  
 
 
 function getAllPersons(cb) {
@@ -181,6 +193,24 @@ function getAllOrders(cb) {
     });
 }
 
+function updateCars(id, cb) {
+    connect2db();
+    Cars.findOneAndUpdate({"_id": id}, function (err, res){
+        if (err) {
+            console.log("Error deleting user" + err);
+        }
+        cb(err);
+    });
+}
+
+
+function updateEmailOnUser(userid, email, cb) {
+    connect2db();
+    Person.updateOne({'_id': userid}, {$set: {'email': email}},  function(err){ 
+        cb(err)
+    });
+ }
+
 
 
 module.exports = {
@@ -200,6 +230,8 @@ module.exports = {
     findOrders: getAllOrders,
     searchPart: searchPart,
     getPartById: getPartById,
-
+    updateCars: updateCars,
+    updateEmailOnUser: updateEmailOnUser,
+    deleteCar: deleteCar,
 
 };

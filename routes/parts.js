@@ -4,8 +4,9 @@ var da = require('../data_access/da')
 
 /* GET parts listing. */
 router.get('/', function(req, res, next) {
+  var userid = req.session['userid'];
   da.findParts(function(err, parts) {
-    res.render('parts/parts', {title:'Part listing', part_list: parts});
+    res.render('parts/parts', {title:'Part listing', part_list: parts, userid: userid});
   });
 
 });

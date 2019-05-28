@@ -7,6 +7,7 @@ const CarsSchema = new Schema({
     car_type: String,
     car_model: String,
     horsepower: String,
+    color: String,
     fuel: String,
     transmition: String
 }, { collection: 'cars' });

@@ -21,5 +21,17 @@ router.get('/add', function(req, res){
 });
 
 
+router.get('/delete', function(req, res){
+  da.deleteCar(req.query.id, function(err){
+    res.redirect('/cars');
+  });
+});
+
+router.get('/updatecars', function(req, res){
+  da.updateCars(req.query.id, function(err){
+    res.redirect('cars/updatecars');
+  });
+});
+
 
 module.exports = router;

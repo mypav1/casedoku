@@ -6,13 +6,29 @@ block content
   form.user_input(action='/cars', method='post')
     label(for='car_type')
         span Brand
-        input(type='text', name='car_type', id='car_type', required='true')
+        br
+        select(type='text', name='car_type', id='car_type', required='true')
+            option Volvo
+            option Saab
+            option Nissan
+            option Toyota
     label(for='car_model')
         span Model
         input(type='text', name='car_model', id='car_model', required='true')
     label(for='horsepower')
         span Horsepower
         input(type='text', name='horsepower', id='horsepower', required='true')
+    label(for='color')
+        span Color
+        br
+        select.dropdown_window(type='text', name='color', id='color', required='true')
+            option Blue
+            option Green
+            option Yellow
+            option Red
+            option Black
+            option Pink
+            option White
     label(for='fuel')
         span Fuel Type
         br
@@ -22,10 +38,11 @@ block content
             option Jet Fuel
             option Grass
             option Gas
+            option Flintstone
     label(for='transmition')
         span Transmition
         br
-        select.dropdownn_window(type='text', name='transmition', id='transmition', required='true')
+        select.dropdown_window(type='text', name='transmition', id='transmition', required='true')
             option Automat
             option Manual
     label.control-lable(for='submit')
