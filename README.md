@@ -7,6 +7,7 @@ Functions:
 - Add Customers, Cars, Carparts and Orders
 - Search in Customers and Carparts
 - Change email address on customer
+- Edit price on parts
 - Read from 4 different collections
 
 !!!!!!!!!NOTICE!!!!!!!!!
