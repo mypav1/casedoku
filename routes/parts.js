@@ -21,5 +21,14 @@ router.get('/add', function(req, res){
   res.render('parts/add', {title: 'Add Parts'});
 });
 
+router.post('/updateprice', function(req, res) {
+  var partid = req.query.partid;
+  var price = req.body.price;
+  console.log(req.query.partid, req.body.price, '---1');
+  da.updatePrice(partid, price, function(err) {
+    res.redirect('/parts');
+  });
+});
+
 
 module.exports = router;

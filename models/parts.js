@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const PartsSchema = new Schema({
     prodName: String,
     prodDesc: String,
-    price: String,
+    price: Number,
     manufacturer: {
         manuName: String,
         manuContactPerson: String,

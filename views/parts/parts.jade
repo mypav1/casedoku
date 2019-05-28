@@ -18,7 +18,14 @@ block content
                 tr
                     td #{part.prodName}
                     td #{part.prodDesc}
-                    td #{part.price}
+                    td.center
+                        form(action='/parts/updateprice?partid=#{part.id}', method='post')
+                            label.input_box(for='price')
+                            span
+                            input(type='number', name='price', id='price', required='true', value='#{part.price}')
+                            label(for='submit')
+                            span
+                            input(type='submit', id='submit', value='save')
                     td #{part.manufacturer.manuName}
                     td #{part.manufacturer.manuContactPerson}
                     td #{part.manufacturer.manuContactNr}

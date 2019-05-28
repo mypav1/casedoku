@@ -212,6 +212,15 @@ function updateEmailOnUser(userid, email, cb) {
  }
 
 
+function updatePrice(partid, price, cb) {
+    connect2db();
+    console.log(partid, price, '-1');
+    Parts.updateOne({'_id': partid}, {$set: {'price': price}}, function(err){
+    cb(err);
+    });
+}
+
+
 
 module.exports = {
     savePersonFromForm: savePerson,
@@ -233,5 +242,6 @@ module.exports = {
     updateCars: updateCars,
     updateEmailOnUser: updateEmailOnUser,
     deleteCar: deleteCar,
+    updatePrice: updatePrice,
 
 };
