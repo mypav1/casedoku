@@ -14,6 +14,7 @@ const OrdersSchema = new Schema({
         zip_code: String,
     },
     parts: String,
+    quantity: Number,
     shop: {
         contact_person: String,
         contact_number: String,

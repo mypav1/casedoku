@@ -30,7 +30,11 @@ block content
         br
         select.dropdown_window(type='text', name='parts', id='parts' required='true')
             each part in part_list
-                option #{part.prodName} --- #{part.price}kr
+                option #{part.prodName} - #{part.price}kr
+    label(for='quantity')
+        span Quantity
+        br
+        input(type='number', name='quantity', id='quantity', value='1')
     label(for='shop.contact_person')
         span Employee
         input(type='text', name='shop.contact_person', id='shop.contact_person', required='true')
